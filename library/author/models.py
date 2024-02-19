@@ -9,5 +9,6 @@ class Author(models.Model):
     book_title = models.CharField(max_length=255)
     book_desc = models.CharField(max_length=255)
     # check img & pdf fields
+    author_img = models.CharField(max_length=255)
     book_img = models.CharField(max_length=255)
     book_pdf = models.CharField(max_length=255)

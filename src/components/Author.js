@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Author = () => {
+export default function Author() {
   return (
     <div>Author</div>
   )
