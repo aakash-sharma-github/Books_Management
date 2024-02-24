@@ -6,6 +6,7 @@ import Signin from "./components/Signin.js";
 import Admin from "./components/Admin.js";
 import PageNotFound from "./components/PageNotFound.js";
 import Contact from "./components/Contact.js";
+import Books from "./components/Books.js";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route exact path="signin" element={<Signin />} />
         <Route exact path="admin" element={<Admin />} />
         <Route exact path="author" element={<Author />} />
+        <Route exact path="book" element={<Books />} />
         <Route exact path="contact" element={<Contact />} />
         <Route exact path="*" element={<PageNotFound />} />
       </Routes>
