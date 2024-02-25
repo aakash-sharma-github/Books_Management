@@ -10,14 +10,23 @@
       content="Web site created using create-react-app"
     />
     <title>Books Management</title>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
-      rel="stylesheet"
-    />
+    <link href="./assets/flowbite.css" rel="stylesheet" />
   </head>
   <body>
     <div id="root"></div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script src="./assets/flowbite_cloudflare.js"></script>
+    <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script>
+      let docTitle = document.title;
+      let emoji = String.fromCodePoint(0x1f61f);
+
+      window.addEventListener("blur", () => {
+        document.title = "Come Back " + emoji;
+      });
+      window.addEventListener("focus", () => {
+        document.title = docTitle;
+      });
+    </script>
   </body>
 </html>

@@ -16,7 +16,7 @@ export default function Contact() {
           <div className="grid gap-6 mb-6 md:grid-cols-2">
             <div>
               <label
-                htmlFor="first_name"
+                htmlforHtml="first_name"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
                 First name
@@ -31,7 +31,7 @@ export default function Contact() {
             </div>
             <div>
               <label
-                htmlFor="last_name"
+                htmlforHtml="last_name"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
                 Last name
@@ -46,7 +46,7 @@ export default function Contact() {
             </div>
             <div>
               <label
-                htmlFor="company"
+                htmlforHtml="company"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
                 Subject
@@ -61,7 +61,7 @@ export default function Contact() {
             </div>
             <div>
               <label
-                htmlFor="phone"
+                htmlforHtml="phone"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
                 Phone number
@@ -78,7 +78,7 @@ export default function Contact() {
           </div>
           <div className="mb-6">
             <label
-              htmlFor="email"
+              htmlforHtml="email"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
               Email address
@@ -93,7 +93,7 @@ export default function Contact() {
           </div>
           <div className="mb-6">
             <label
-              htmlFor="message"
+              htmlforHtml="message"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
               Your message

@@ -1,14 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import NavBar from "./NavBar";
-import Footer from "./Footer";
 // import bookSignin from "../assets/horizontal-book.jpg";
 
 export default function Signin() {
   return (
     <div>
-      <NavBar />
-
       <section className="bg-gray-50 dark:bg-gray-900">
         {/* <div className="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto p-4">
           <img
@@ -56,7 +52,7 @@ export default function Signin() {
               <form className="mt-8 space-y-6" action="#">
                 <div>
                   <label
-                    for="email"
+                    forHtml="email"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Your email
@@ -72,7 +68,7 @@ export default function Signin() {
                 </div>
                 <div>
                   <label
-                    for="password"
+                    forHtml="password"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Your password
@@ -96,9 +92,12 @@ export default function Signin() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 sm:w-auto dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  className="w-full px-5 py-3 mr-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 sm:w-auto dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 >
                   Login to your account
+                </button>
+                <button className="w-full px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 sm:w-auto dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                  <Link to="/">Back to home</Link>
                 </button>
                 <div className="text-sm font-medium text-gray-900 dark:text-white">
                   Not registered yet?{" "}
@@ -114,8 +113,6 @@ export default function Signin() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 }

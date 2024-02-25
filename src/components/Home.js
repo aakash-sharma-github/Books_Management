@@ -52,6 +52,9 @@ export default function Home() {
       <section className="bg-white dark:bg-gray-900">
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
           <div className="grid md:grid-cols-2 gap-8">
+            <button className="w-full max-w-[48rem] flex-row bg-white dark:bg-gray-500">
+              <Link to="/adminadd">add admin</Link>
+            </button>
             {cardItems.map(item =>
               <div
                 key={item.id}
