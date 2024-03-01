@@ -52,9 +52,6 @@ export default function Home() {
       <section className="bg-white dark:bg-gray-900">
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
           <div className="grid md:grid-cols-2 gap-8">
-            <button className="w-full max-w-[48rem] flex-row bg-white dark:bg-gray-500">
-              <Link to="/adminadd">add admin</Link>
-            </button>
             {cardItems.map(item =>
               <div
                 key={item.id}
@@ -85,7 +82,7 @@ export default function Home() {
                         variant="text"
                         className="flex items-center gap-2"
                       >
-                        Learn More
+                        Read More
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"

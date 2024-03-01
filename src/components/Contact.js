@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import Footer from "./Footer";
 import NavBar from "./NavBar";
 
 export default function Contact() {
+
+const initialState = {
+
+}
+
+const [contact, setContact] = useState(initialState);
+
   return (
     <div>
       <NavBar />
