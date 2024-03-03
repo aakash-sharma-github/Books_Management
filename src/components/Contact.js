@@ -1,14 +1,72 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import axios from "axios";
+import { Toast } from "primereact/toast";
 import Footer from "./Footer";
 import NavBar from "./NavBar";
 
 export default function Contact() {
+  const toast = useRef(null);
+  const initialState = {
+    firstname: "",
+    lastname: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: ""
+  };
 
-const initialState = {
+  const [contact, setContact] = useState(initialState);
 
-}
+  const handleChange = e => {
+    const { name, value } = e.target;
+    setContact(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
 
-const [contact, setContact] = useState(initialState);
+  const handleSubmit = async e => {
+    e.preventDefault();
+
+    try {
+      const validate =
+        contact.firstname === "" ||
+        contact.lastname === "" ||
+        contact.email === "" ||
+        contact.phone === "" ||
+        contact.subject === "" ||
+        contact.message === "";
+
+      if (!validate) {
+        const response = await axios.post(
+          "http://127.0.0.1:8000/api/contact/",
+          contact
+        );
+        console.log(response.data);
+        toast.current.show({
+          severity: "success",
+          summary: "Success",
+          detail: "Message Sent",
+          life: 3000
+        });
+      } else if (validate) {
+        toast.current.show({
+          severity: "warn",
+          summary: "Warning",
+          detail: "Please fill in all fields",
+          life: 3000
+        });
+      }
+    } catch (error) {
+      console.log(error);
+      toast.current.show({
+        severity: "error",
+        summary: "Error",
+        detail: "Something went wrong",
+        life: 3000
+      });
+    }
+  };
 
   return (
     <div>
@@ -19,11 +77,15 @@ const [contact, setContact] = useState(initialState);
             Let&#8217;s get in touch&#8228;
           </h1>
         </div>
-        <form className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+        <Toast ref={toast} />
+        <form
+          className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8"
+          onSubmit={handleSubmit}
+        >
           <div className="grid gap-6 mb-6 md:grid-cols-2">
             <div>
               <label
-                htmlforHtml="first_name"
+                forhtml="first_name"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
                 First name
@@ -31,6 +93,9 @@ const [contact, setContact] = useState(initialState);
               <input
                 type="text"
                 id="first_name"
+                name="firstname"
+                value={contact.firstname}
+                onChange={handleChange}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="John"
                 required
@@ -38,7 +103,7 @@ const [contact, setContact] = useState(initialState);
             </div>
             <div>
               <label
-                htmlforHtml="last_name"
+                htmlFor="last_name"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
                 Last name
@@ -46,6 +111,9 @@ const [contact, setContact] = useState(initialState);
               <input
                 type="text"
                 id="last_name"
+                name="lastname"
+                value={contact.lastname}
+                onChange={handleChange}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Doe"
                 required
@@ -53,7 +121,7 @@ const [contact, setContact] = useState(initialState);
             </div>
             <div>
               <label
-                htmlforHtml="company"
+                htmlFor="company"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
                 Subject
@@ -61,14 +129,17 @@ const [contact, setContact] = useState(initialState);
               <input
                 type="text"
                 id="company"
+                name="subject"
+                value={contact.subject}
+                onChange={handleChange}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Flowbite"
+                placeholder="write something fruitfull..."
                 required
               />
             </div>
             <div>
               <label
-                htmlforHtml="phone"
+                htmlFor="phone"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
                 Phone number
@@ -76,6 +147,9 @@ const [contact, setContact] = useState(initialState);
               <input
                 type="tel"
                 id="phone"
+                name="phone"
+                value={contact.phone}
+                onChange={handleChange}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="99999 88888"
                 pattern="[0-9]{10}"
@@ -85,7 +159,7 @@ const [contact, setContact] = useState(initialState);
           </div>
           <div className="mb-6">
             <label
-              htmlforHtml="email"
+              htmlFor="email"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
               Email address
@@ -93,14 +167,17 @@ const [contact, setContact] = useState(initialState);
             <input
               type="email"
               id="email"
+              name="email"
+              value={contact.email}
+              onChange={handleChange}
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="john.doe@company.com"
+              placeholder="example@example.com"
               required
             />
           </div>
           <div className="mb-6">
             <label
-              htmlforHtml="message"
+              htmlFor="message"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
               Your message
@@ -108,6 +185,9 @@ const [contact, setContact] = useState(initialState);
             <textarea
               id="message"
               rows="4"
+              name="message"
+              value={contact.message}
+              onChange={handleChange}
               className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Write your messages here..."
               required
