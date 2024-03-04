@@ -49,6 +49,8 @@ export default function Contact() {
           detail: "Message Sent",
           life: 3000
         });
+        // resetting the form
+        setContact(initialState);
       } else if (validate) {
         toast.current.show({
           severity: "warn",

@@ -9,3 +9,4 @@ class ContactSerializer(serializers.ModelSerializer):
     class Meta:
         model = ContactModel
         fields = '__all__'
+        

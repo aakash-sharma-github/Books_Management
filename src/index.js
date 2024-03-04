@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import "../node_modules/flowbite/dist/flowbite.css";
 import "./index.css";
+import "./styles/style.css";
 // primereact toast
 import "primeicons/primeicons.css";
 import { PrimeReactProvider } from "primereact/api";

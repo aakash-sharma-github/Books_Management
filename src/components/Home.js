@@ -1,113 +1,47 @@
 import React from "react";
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  Typography,
-  Button
-} from "@material-tailwind/react";
 import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
-import book1 from "../assets/book1.jpg";
-import book2 from "../assets/book6.webp";
-import book3 from "../assets/book3.jpg";
-import book4 from "../assets/book4.jpg";
-
-const cardItems = [
-  {
-    id: 1,
-    book: book1,
-    title: "Noteworthy technology acquisitions 2021",
-    description:
-      "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order."
-  },
-  {
-    id: 2,
-    book: book2,
-    title: "Noteworthy technology acquisitions 2021",
-    description:
-      "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order."
-  },
-  {
-    id: 3,
-    book: book3,
-    title: "Noteworthy technology acquisitions 2021",
-    description:
-      "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order."
-  },
-  {
-    id: 4,
-    book: book4,
-    title: "Noteworthy technology acquisitions 2021",
-    description:
-      "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order."
-  }
-];
 
 export default function Home() {
   return (
     <div>
       <NavBar />
-      <section className="bg-white dark:bg-gray-900">
-        <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
-          <div className="grid md:grid-cols-2 gap-8">
-            {cardItems.map(item =>
-              <div
-                key={item.id}
-                // className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8"
-                className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-900 rounded-lg p-8 md:p-12"
+      <section className="bg-center bg-no-repeat bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')] bg-gray-700 bg-blend-multiply">
+        <div className="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
+          <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
+            We invest in the world’s potential
+          </h1>
+          <p className="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">
+            Here at Flowbite we focus on markets where technology, innovation,
+            and capital can unlock long-term value and drive economic growth.
+          </p>
+          <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
+            <Link
+              to="#"
+              className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
+            >
+              Get started
+              <svg
+                className="w-3.5 h-3.5 ms-2 rtl:rotate-180"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 10"
               >
-                <Card className="w-full max-w-[48rem] flex-row bg-white dark:bg-gray-500">
-                  <CardHeader
-                    shadow={false}
-                    floated={false}
-                    className="m-0 w-2/5 shrink-0 rounded-r-none"
-                  >
-                    <img
-                      src={item.book}
-                      alt="card"
-                      className="h-full w-full object-cover"
-                    />
-                  </CardHeader>
-                  <CardBody>
-                    <Typography variant="h4" color="gray" className="mb-2">
-                      {item.title}
-                    </Typography>
-                    <Typography color="stone" className="mb-8 font-normal">
-                      {item.description}
-                    </Typography>
-                    <Link to="#" className="inline-block">
-                      <Button
-                        variant="text"
-                        className="flex items-center gap-2"
-                      >
-                        Read More
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={2}
-                          className="h-4 w-4"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                          />
-                        </svg>
-                      </Button>
-                    </Link>
-                  </CardBody>
-                </Card>
-              </div>
-            )}
-
-            <Footer />
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M1 5h12m0 0L9 1m4 4L9 9"
+                />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

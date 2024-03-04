@@ -1,5 +1,4 @@
-Header
-.header {
+/*Header .header {
   padding: 10px 0;
   float: left;
   width: 100%;
@@ -74,8 +73,10 @@ Header
 .header.header-2 {
   background-color: #dbece5;
 }
+*/
 
 /* header responsive */
+/*
 @media screen and (min-width: 1200px) and (max-width: 1440px) {
   .header-right {
     display: none;
@@ -104,8 +105,9 @@ Header
     display: none;
   }
 }
-
+*/
 /* navbar stick */
+/*
 .header.stick {
   padding: 10px 0;
 }
@@ -145,8 +147,9 @@ Header
 .sticky-bar.stick .burger-icon {
   top: 45px;
 }
-
+*/
 /* hover-up class */
+/*
 .hover-up,
 .hover-up:hover {
   transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
@@ -154,8 +157,9 @@ Header
 .hover-up:hover {
   transform: translateY(-3px);
 }
-
+*/
 /* button btn class */
+/*
 .btn {
   font-family: Chivo, sans-serif;
   padding: 22px 32px;
@@ -251,8 +255,9 @@ Header
     padding: 15px 22px;
   }
 }
-
+*/
 /* container */
+/*
 .container,
 .container-fluid,
 .container-lg,
@@ -266,8 +271,9 @@ Header
   margin-right: auto;
   margin-left: auto;
 }
-
+*/
 /* container responsive */
+/*
 @media (min-width: 1400px) {
   .container.wide {
     max-width: 1544px;
@@ -321,4 +327,14 @@ Header
   .d-xl-block {
     display: block !important;
   }
+}
+*/
+/* ---------------------------------------------------------------------------- */
+.search-space {
+  position: relative;
+  right: 30px;
+}
+.dark-button {
+  position: relative;
+  left: 315px;
 }
