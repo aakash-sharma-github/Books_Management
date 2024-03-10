@@ -9,7 +9,7 @@ export default function PageNotFound() {
     <div>
       <NavBar />
       <section className="bg-white dark:bg-gray-900">
-        <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+        <div className="py-8 px-4 mx-auto max-w-screen-2xl lg:py-16 lg:px-6">
           <div className="mx-auto max-w-screen-sm text-center">
             <img
               className="mx-auto max-w-3xl h-500 w-auto"
@@ -23,8 +23,8 @@ export default function PageNotFound() {
               Whoops&#33; That page doesn&#39;t exist.
             </p>
             <p className="mb-4 text-lg font-light text-gray-500 dark:text-gray-400">
-              Sorry, we can&#8217;t find that page. You'll find lots to explore on the
-              home page.{" "}
+              Sorry, we can&#8217;t find that page. You'll find lots to explore
+              on the home page.{" "}
             </p>
             <Link
               to="/"

@@ -7,14 +7,25 @@ from .models import ContactModel
 # Create your views here.
 
 class ContactView(APIView):
+    
+    # getting all the information from the database
     def get(self, request):
-        products = ContactModel.objects.all()
-        serializer = ContactSerializer(products, many=True)
+        
+        # getting all the information from the database
+        info = ContactModel.objects.all()
+        
+        # serializing the data from the database and returning it
+        serializer = ContactSerializer(info, many=True)
         return Response(serializer.data)
 
 
+    # saving the data in the database
     def post(self, request):
+        
+        # serializing the data from the request
         serializer = ContactSerializer(data=request.data)
+        
+        # if the data is valid then saving the data in the database
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)

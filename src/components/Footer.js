@@ -15,7 +15,7 @@ export default function Footer() {
   return (
     <div>
       <footer className="bg-white dark:bg-gray-900">
-        <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+        <div className="mx-auto w-full max-w-screen-2xl p-4 py-6 lg:py-8">
           <div className="flex mt-4 sm:justify-center sm:mt-0">
             <div className="mb-6 md:mb-0 sm:flex sm:items-center sm:justify-between">
               <Link to="/" className="flex items-center">

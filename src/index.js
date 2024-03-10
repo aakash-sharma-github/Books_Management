@@ -4,6 +4,7 @@ import App from "./App";
 import "../node_modules/flowbite/dist/flowbite.css";
 import "./index.css";
 import "./styles/style.css";
+import "./styles/book.css";
 // primereact toast
 import "primeicons/primeicons.css";
 import { PrimeReactProvider } from "primereact/api";
